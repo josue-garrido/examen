@@ -1,0 +1,75 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <title>EXAMEN</title>
+    </head>
+    
+    <body>
+        <script>
+        function salario() {
+            var salario = getElementById("salario").value;
+            var ventas = getElementById("ventas").value;
+            var ventasarreglo = [];
+            var acu = 0;
+            for (var i = 0; i <= ventas; i++) {
+                ventasarreglo[i] = parseInt(prompt("ingrese el monto de venta"));
+            }
+            for (var j = 0; j <= ventas; j++) {
+                //ventasarreglo[j] + ventasarreglo[j + 1];
+                acu += ventasarreglo[j];
+            }
+            var resultado = acum / 12.5;
+            var salarioComision = salario + resultado;
+        
+            document.getElementById("cantidad1").innerHTML = resultado;
+            document.getElementById("cantidad2").innerHTML = salarioComision;
+        
+        }
+        </script>
+        <form>
+            <br>
+            <table align="center" border="1">
+                <td align="left" width="100">Introducir su salario $ </td>
+                <td align="center" width="150">
+                    <!--<input type="text" name="cantidad" onkeypress="return validarn(event)">-->
+                    <input type="text" minlength="0" maxlength="5" name="cantidad" id="salario">
+                </td>
+                <tr>
+                    <td align="left" width="100">Introduce su numero de ventas</td>
+                    <td align="center" width="150">
+                        <!--<input type="text" name="cantidad" onkeypress="return validarn(event)">-->
+                        <input type="text" placeholder="Introduce maximo 9" maxlength="1" name="cantidad" id="ventas">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="center" width="150">
+                        <input type="button" value="calcular" onclick="salario()">
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" width="100">Interes de sus ventas </td>
+                    <td align="center" width="150">
+                        <!--<input type="text" name="sueldoti" id="cantidad1">-->
+                        <div id="cantidad1"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" width="100">Su saldo con el interes </td>
+                    <td align="center" width="150">
+                        <!--<input type="text" name="sueldoti" id="cantidad2">-->
+                        <div id="cantidad2"></div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    
+    </body>
+    
+    </html>
+
